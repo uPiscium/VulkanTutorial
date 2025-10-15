@@ -39,7 +39,7 @@ It is recommended to install [SDL3](https://www.libsdl.org/) to your system to r
    ```
 
 # License
-This project is licensed under the BSD3-Clause License. See the [LICENSE](LICENSE.md) file for details
+This project is licensed under the BSD3-Clause License. See the [LICENSE](LICENSE) file for details
 
 # Acknowledgements
 - The original [Vulkan Tutorial](https://vulkan-tutorial.com/) by Alexander Overvoorde.
