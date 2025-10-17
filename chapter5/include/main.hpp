@@ -3,7 +3,7 @@
 #include <common.hpp>
 #include <util.hpp>
 
-namespace VulkanTutorial::Chapter4 {
+namespace VulkanTutorial::Chapter5 {
 
 struct Vertex {
   glm::vec2 pos;
@@ -136,6 +136,6 @@ public:
   void run();
 };
 
-} // namespace VulkanTutorial::Chapter4
+} // namespace VulkanTutorial::Chapter5
 
 int main();

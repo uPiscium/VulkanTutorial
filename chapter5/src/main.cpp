@@ -1,6 +1,6 @@
 #include "../include/main.hpp"
 
-namespace VulkanTutorial::Chapter4 {
+namespace VulkanTutorial::Chapter5 {
 
 VkVertexInputBindingDescription Vertex::getBindingDescription() {
   VkVertexInputBindingDescription bindingDescription{};
@@ -1165,10 +1165,10 @@ App::~App() { this->cleanup(); }
 
 void App::run() { this->mainLoop(); }
 
-} // namespace VulkanTutorial::Chapter4
+} // namespace VulkanTutorial::Chapter5
 
 int main() {
-  VulkanTutorial::Chapter4::App app;
+  VulkanTutorial::Chapter5::App app;
 
   try {
     app.run();
