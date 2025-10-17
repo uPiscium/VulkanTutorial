@@ -15,7 +15,7 @@ add_subdirectory(common)
 
 # Build each chapter
 add_subdirectory(chapter4)
-# add_subdirectory(chapter5)
+add_subdirectory(chapter5)
 # add_subdirectory(chapter6)
 # add_subdirectory(chapter7)
 # add_subdirectory(chapter8)
