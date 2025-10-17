@@ -1,6 +1,14 @@
 #!/usr/bin/env sh
 
-cd resource/shader/ || exit
-glslc shader.vert -o shader.vert.spv
-glslc shader.frag -o shader.frag.spv
+cd assets/shaders/ || exit
+
+for dir in */ ; do
+    cd "$dir" || exit
+    for file in *.vert *.frag; do
+        [ -e "$file" ] || continue
+        glslc "$file" -o "${file}.spv"
+    done
+    cd .. || exit
+done
+
 cd .. || exit

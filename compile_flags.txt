@@ -1,5 +1,4 @@
 -I./deps/
--I./include/
--I./example/
+-I./common/include/
 -DTERREATE_DEBUG_BUILD
 -std=c++20

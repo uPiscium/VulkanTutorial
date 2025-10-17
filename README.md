@@ -1,6 +1,8 @@
 # About this repository
 This repositry contains the basic Vulkan examples and tutorials based on the [Vulkan Tutorial](https://vulkan-tutorial.com/).
 
+In this repositry, I have used SDL3 for window creation and input handling instead of GLFW, which is used in the original tutorial. The code is also updated to use C++23 features and the latest Vulkan API.
+
 # Prerequisites
 - A C++ compiler that supports C++23 or later.
 - CMake 3.30 or later.
@@ -35,7 +37,7 @@ It is recommended to install [SDL3](https://www.libsdl.org/) to your system to r
    Run the desired example executable. For example to run the "Hello Triangle" example:
    ```bash
    cd build
-   ./build/chapter1
+   ./build/chapter4
    ```
 
 # License
