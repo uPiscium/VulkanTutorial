@@ -58,10 +58,6 @@ static constexpr char const *ENGINE_NAME = "Terreate";
 static constexpr int WINDOW_WIDTH = 800;
 static constexpr int WINDOW_HEIGHT = 600;
 static constexpr u32 ENGINE_VERSION = VK_MAKE_VERSION(0, 1, 0);
-static constexpr char const *MODEL_PATH =
-    "assets/models/viking_room/viking_room.obj";
-static constexpr char const *TEXTURE_PATH =
-    "assets/models/viking_room/viking_room.png";
 
 static constexpr char const *VALIDATION_LAYERS[] = {
     "VK_LAYER_KHRONOS_validation"};
