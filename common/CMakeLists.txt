@@ -1,6 +1,4 @@
 include(options)
-
-set_cmake_options()
 project(common)
 
 add_library(

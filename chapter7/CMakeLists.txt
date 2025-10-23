@@ -1,6 +1,4 @@
 include(options)
-
-set_cmake_options()
 project(Chapter7)
 
 add_executable(${PROJECT_NAME} src/main.cpp)

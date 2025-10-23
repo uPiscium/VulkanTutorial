@@ -1,9 +1,3 @@
-function(set_cmake_options)
-  set(CMAKE_CXX_STANDARD 23)
-  set(CMAKE_CXX_STANDARD_REQUIRED ON)
-  set(CMAKE_CXX_EXTENSIONS OFF)
-endfunction()
-
 function(set_build_mode)
   if(DEBUG_BUILD)
     message(STATUS "[SYSTEM] Building with debug flags.")
