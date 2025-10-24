@@ -3,7 +3,7 @@
 #include <common.hpp>
 #include <util.hpp>
 
-namespace VulkanTutorial::Chapter9 {
+namespace VulkanTutorial::Chapter10 {
 static char const *const TEXTURE_PATH =
     "assets/models/viking_room/viking_room.png";
 static char const *const MODEL_PATH =
@@ -19,11 +19,11 @@ struct Vertex {
 
   bool operator==(Vertex const &other) const;
 };
-} // namespace VulkanTutorial::Chapter9
+} // namespace VulkanTutorial::Chapter10
 
 namespace std {
-template <> struct hash<VulkanTutorial::Chapter9::Vertex> {
-  size_t operator()(VulkanTutorial::Chapter9::Vertex const &vertex) const {
+template <> struct hash<VulkanTutorial::Chapter10::Vertex> {
+  size_t operator()(VulkanTutorial::Chapter10::Vertex const &vertex) const {
     return ((hash<glm::vec3>()(vertex.pos) ^
              (hash<glm::vec3>()(vertex.color) << 1)) >>
             (hash<glm::vec2>()(vertex.texCoord) << 1));
@@ -31,7 +31,7 @@ template <> struct hash<VulkanTutorial::Chapter9::Vertex> {
 };
 } // namespace std
 
-namespace VulkanTutorial::Chapter9 {
+namespace VulkanTutorial::Chapter10 {
 
 struct UniformBufferObject {
   alignas(16) glm::mat4 model;
@@ -208,6 +208,6 @@ public:
   void run();
 };
 
-} // namespace VulkanTutorial::Chapter9
+} // namespace VulkanTutorial::Chapter10
 
 int main();

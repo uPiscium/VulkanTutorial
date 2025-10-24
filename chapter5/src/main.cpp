@@ -1002,6 +1002,10 @@ bool App::pollEvents() {
     case SDL_EVENT_WINDOW_DESTROYED:
       return false;
 
+    case SDL_EVENT_WINDOW_RESIZED:
+    case SDL_EVENT_WINDOW_PIXEL_SIZE_CHANGED:
+      mFramebufferResized = true;
+
     default:
       break;
     }

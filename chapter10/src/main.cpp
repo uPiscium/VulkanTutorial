@@ -1,6 +1,6 @@
 #include "../include/main.hpp"
 
-namespace VulkanTutorial::Chapter9 {
+namespace VulkanTutorial::Chapter10 {
 
 bool Vertex::operator==(Vertex const &other) const {
   return pos == other.pos && color == other.color && texCoord == other.texCoord;
@@ -1140,6 +1140,8 @@ void App::createTexture() {
   stbi_uc *pixels =
       stbi_load(TEXTURE_PATH, &width, &height, &channels, STBI_rgb_alpha);
   VkDeviceSize imageSize = width * height * 4;
+  mMipLevels =
+      static_cast<u32>(std::floor(std::log2(std::max(width, height)))) + 1;
 
   if (!pixels) {
     throw std::runtime_error("Failed to load texture image.");
@@ -1199,7 +1201,7 @@ void App::createTextureSampler() {
   samplerInfo.compareOp = VK_COMPARE_OP_ALWAYS;
   samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
   samplerInfo.mipLodBias = 0.0f;
-  samplerInfo.maxLod = 0.0f;
+  samplerInfo.maxLod = static_cast<float>(mMipLevels);
   samplerInfo.minLod = 0.0f;
 
   if (vkCreateSampler(mDevice, &samplerInfo, nullptr, &mTextureSampler) !=
@@ -1587,6 +1589,10 @@ bool App::pollEvents() {
     case SDL_EVENT_WINDOW_DESTROYED:
       return false;
 
+    case SDL_EVENT_WINDOW_RESIZED:
+    case SDL_EVENT_WINDOW_PIXEL_SIZE_CHANGED:
+      mFramebufferResized = true;
+
     default:
       break;
     }
@@ -1792,10 +1798,10 @@ App::~App() { this->cleanup(); }
 
 void App::run() { this->mainLoop(); }
 
-} // namespace VulkanTutorial::Chapter9
+} // namespace VulkanTutorial::Chapter10
 
 int main() {
-  VulkanTutorial::Chapter9::App app;
+  VulkanTutorial::Chapter10::App app;
 
   try {
     app.run();
